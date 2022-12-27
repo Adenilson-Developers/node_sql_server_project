@@ -12,3 +12,18 @@
 
 [dotenv] - dotenv is a zero-dependency module that loads eviroment variable from a .env file into process.env
 
+[.env] 
+NODE_ENV = development
+express server config
+PORT = 8080
+HOST = localhost
+HOST_URL = http://localhost:8080
+
+#sql server config
+
+SQL_USER = your user name SQL Server
+SQL_PASSWORD = your password SQL Server
+SQL_DATABASE = your database name
+SQL_SERVER = your server sql /EXPRESS
+SQL_ENCRYPT = false
+
