@@ -3,8 +3,6 @@
 const fs = require('fs-extra');
 const { json } = require('path');
 
-createEvent
-
 const loadSQLQueries = async (fileName) => {
     const filePath = json(process.cwd(), 'data', fileName);
     const file = fs.readdir(filePath);
