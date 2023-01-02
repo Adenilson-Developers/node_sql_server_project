@@ -15,7 +15,7 @@ const getEvents = async () => {
     }
 }
 
-const getEventId = async () => {
+const getEventId = async (eventId) => {
     try{
         let pool = await sql.connect(config.sql);
         const sqlQueries = await utils.loadSQLQueries('events');
