@@ -7,8 +7,8 @@ const { getEvents, getEventId, addEvent } = eventController;
 
 router.get('/events', getEvents);
 router.get('/event/:id', getEventId);
-router.post('/event', addEvent);
+router.post('/event', addEvent); 
 
-module.exports = {
+module.exports = { 
     routes: router
 }

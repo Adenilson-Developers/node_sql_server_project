@@ -1,4 +1,4 @@
-CREATE INTO [dbo].[event]
+INSERT INTO [dbo].[event]
         (
             [eventTitle],
             [eventDescription],
