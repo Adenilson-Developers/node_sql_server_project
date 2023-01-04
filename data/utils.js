@@ -8,7 +8,6 @@ const loadSQLQueries = async (folderName) => {
     const filePath = join(process.cwd(), 'data', folderName);
     const files = await fs.readdir(filePath);
     const sqlFiles = await files.filter(f => f.endsWith('.sql'));
-    console.log('mostrar file',sqlFiles)
     const queries = {}
     for(const sqlfile of sqlFiles){
         const query = await fs.readFileSync(join(filePath, sqlfile), { encoding:"UTF-8"});
