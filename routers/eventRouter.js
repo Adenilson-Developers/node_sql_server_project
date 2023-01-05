@@ -7,7 +7,7 @@ const { getEvents, getEventId, addEvent, updateEvent } = eventController;
 
 router.get('/events', getEvents);
 router.get('/event/:id', getEventId);
-router.post('/event', addEvent); 
+router.post('/event', addEvent);  
 router.put('/event/:id', updateEvent)
 
 module.exports = { 
