@@ -24,15 +24,27 @@ const getEventId = async (req, res, next) => {
 const addEvent = async (req, res, next) => {
     try{
         let data = req.body;
-        const created = eventData.createEvent(data);
+        const created = await eventData.createEvent(data);
         res.send(created);
     }catch(error){
         res.status(400).send(error.message);
     }
 }
 
+const updateEvent = async (req, res, next) => {
+    try{
+        const eventId = req.params.id;
+        const data = req.body;
+        const updated = await eventData.updateEvent(eventId, data);
+        res.send(updated);
+    }catch(error){
+        res.status(400).send(error.message)
+    }
+}
+
 module.exports = {
     getEvents,
     getEventId,
-    addEvent
+    addEvent,
+    updateEvent
 }
