@@ -42,9 +42,20 @@ const updateEvent = async (req, res, next) => {
     }
 }
 
+const deleteEvet = async (req, res, next) => {
+    try{
+        const eventId = req.params.id;
+        const deletedId = await eventData.deleteEvent(eventId);
+        res.send(deletedId)
+    }catch(error){
+        res.status(400).send(error.message)
+    }
+}
+
 module.exports = {
     getEvents,
     getEventId,
     addEvent,
-    updateEvent
+    updateEvent,
+    deleteEvet
 }
