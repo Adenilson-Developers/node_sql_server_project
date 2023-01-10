@@ -61,12 +61,25 @@ const updateEvent = async (eventId, eventData) => {
                            .input('maxMembers', sql.NVarChar, eventData.maxMembers)
                            .query(sqlQueries.updateEvent)
         return update.recordset;
-    }catch(error){error.message}
+    }catch(error){ return error.message}
+}
+
+const deleteEvent = async (eventId)  => {
+    try{
+        let pool = await sql.connect(config.sql);
+        const sqlQueries = await utils.loadSQLQueries('events');
+        const deleted = pool.request()
+                            .input('eventId', sql.Int, eventId)
+                            .query(sqlQueries.deleteEvent)
+        return deleted.recordset
+
+    }catch(error){return error.message}
 }
 
 module.exports = {
     getEvents,
     getEventId,
     createEvent,
-    updateEvent
+    updateEvent,
+    deleteEvent
 }
